@@ -6,7 +6,7 @@ on:
       - "develop"
     paths-ignore:
       - "LICENSE"
-      - "*.md"
+      - "*.md" 
 
 jobs:
   run:
