@@ -18,7 +18,7 @@ provider "digitalocean" {
 }
 
 data "digitalocean_ssh_key" "default" {
-  name = "default auth"
+  name = "default"
 }
 
 resource "digitalocean_droplet" "cluster-manager" {
