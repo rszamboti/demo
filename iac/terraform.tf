@@ -24,6 +24,7 @@ provider "digitalocean" {
 #provider "linode" {
 #  token = var.linode_token
 #}
+
 #data "linode_sshkey" "default" {
 #  label = "default"
 #}
