@@ -1,6 +1,6 @@
 terraform {
   cloud {
-    organization = "git-demo"
+    organization = "demo-git"
     workspaces {
       name = "demo"
     }
