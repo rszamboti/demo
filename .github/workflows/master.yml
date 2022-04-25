@@ -35,22 +35,22 @@ jobs:
     - name: 6. Compile, Build and Test
       run: ./build.sh
 
-#    - name: 7. Code Analysis - White-box testing (SAST)
-#      env:
-#        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-#        SONAR_ORGANIZATION: ${{ secrets.SONAR_ORGANIZATION }}
-#        SONAR_PROJECT_KEY: ${{ secrets.SONAR_PROJECT_KEY }}
-#        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-#        SONAR_URL: ${{ secrets.SONAR_URL }}
-#      run: ./codeAnalysis.sh 
-#
-#    - name: 8. Code Analysis - Quality Gate Checking
-#      uses: jkumar19/sonar-build-breaker@v1.0.0
-#      with:
-#        sonar_branch: master
-#        project_key: ${{ secrets.SONAR_PROJECT_KEY }}
-#        sonar_token: ${{ secrets.SONAR_TOKEN }}
-#        sonar_url: ${{ secrets.SONAR_URL }}
+    - name: 7. Code Analysis - White-box testing (SAST)
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        SONAR_ORGANIZATION: ${{ secrets.SONAR_ORGANIZATION }}
+        SONAR_PROJECT_KEY: ${{ secrets.SONAR_PROJECT_KEY }}
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        SONAR_URL: ${{ secrets.SONAR_URL }}
+      run: ./codeAnalysis.sh
+
+    - name: 8. Code Analysis - Quality Gate Checking
+      uses: jkumar19/sonar-build-breaker@v1.0.0
+      with:
+        sonar_branch: master
+        project_key: ${{ secrets.SONAR_PROJECT_KEY }}
+        sonar_token: ${{ secrets.SONAR_TOKEN }}
+        sonar_url: ${{ secrets.SONAR_URL }}
 
 #    - name: 9. Libraries Analysis - White-box testing (SAST)
 #      env:
@@ -83,9 +83,11 @@ jobs:
       env:
         REPOSITORY_URL: ${{ secrets.REPOSITORY_URL }}
         REPOSITORY_ID: ${{ secrets.REPOSITORY_ID }}
-        DIGITALOCEAN_PRIVATE_KEY: ${{ secrets.DIGITALOCEAN_PRIVATE_KEY }}
-        DIGITALOCEAN_PUBLIC_KEY: ${{ secrets.DIGITALOCEAN_PUBLIC_KEY }}
         DIGITALOCEAN_TOKEN: ${{ secrets.DIGITALOCEAN_TOKEN }}
+        DIGITALOCEAN_SSH_KEY: ${{ secrets.DIGITALOCEAN_SSH_KEY }}
+#        LINODE_TOKEN: ${{ secrets.LINODE_TOKEN }}
+#        LINODE_SSH_KEY: ${{ secrets.LINODE_SSH_KEY }}
+        K3S_TOKEN: ${{ secrets.K3S_TOKEN }}
         TERRAFORM_TOKEN: ${{ secrets.TERRAFORM_TOKEN }}
-#        DATADOG_AGENT_KEY: ${{ secrets.DATADOG_AGENT_KEY }}
+        #        DATADOG_AGENT_KEY: ${{ secrets.DATADOG_AGENT_KEY }}
       run: ./deploy.sh
