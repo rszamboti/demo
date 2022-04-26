@@ -31,7 +31,6 @@ public class PhonebookService{
         
         this.persistence = persistence;
 
-        int v = (int)Math.random();
     }
     
     // List all data.
