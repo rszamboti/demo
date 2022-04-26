@@ -66,10 +66,10 @@ jobs:
         CONTRAST_USER_NAME: ${{ secrets.CONTRAST_USER_NAME }}
       run: ./package.sh
 
-#    - name: 11. Package Analysis - White-box testing (SAST)
-#      env:
-#        SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-#      run: ./packageAnalysis.sh
+    - name: 11. Package Analysis - White-box testing (SAST)
+      env:
+        SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+      run: ./packageAnalysis.sh
 
     - name: 12. Publishing
       env:
