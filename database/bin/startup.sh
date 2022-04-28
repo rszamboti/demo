@@ -60,5 +60,6 @@ do
 	  echo "Service stopped!"
 
 		break
+
 	fi
 done
